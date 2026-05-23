@@ -432,13 +432,19 @@ body {
 }
 
 .logout-button {
-    background: #c1121f;
+    background: linear-gradient(135deg, #c1121f, #a50f1a);
     color: white;
     border: none;
-    padding: 13px 18px;
+    padding: 12px 22px;
     border-radius: 12px;
     font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.logout-button:hover {
+    background: #a50f1a;
 }
 
 .settings-list {
@@ -464,12 +470,106 @@ body {
     color: #666;
 }
 
-.logout-button {
-    background: #c1121f;
-    color: white;
-    border: none;
-    padding: 13px 18px;
-    border-radius: 12px;
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-section {
+    background: white;
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 8px 20px rgba(43, 10, 92, 0.08);
+}
+
+.settings-section h2 {
+    color: #240046;
+    font-size: 24px;
     font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid #eee;
+}
+
+.settings-row:first-of-type {
+    border-top: none;
+}
+
+.settings-row h3 {
+    color: #240046;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.settings-row p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.settings-value {
+    color: #5a189a;
+    font-weight: 700;
+}
+
+.settings-badge {
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.settings-badge.active {
+    background: #e7f8ef;
+    color: #1f8f55;
+}
+
+.toggle-button {
+    width: 54px;
+    height: 28px;
+    border: none;
+    border-radius: 999px;
+    background: #ddd;
     cursor: pointer;
+    position: relative;
+    font-size: 0;
+    transition: 0.25s;
+}
+
+.toggle-button::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.25s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+.toggle-button.active {
+    background: #7b2ff7;
+}
+
+.toggle-button.active::after {
+    left: 28px;
+}
+
+.settings-section {
+    transition: 0.2s;
+}
+
+.settings-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(43, 10, 92, 0.12);
 }

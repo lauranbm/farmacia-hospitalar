@@ -6,6 +6,8 @@ function App() {
   const [usuarioLogado, setUsuarioLogado] = useState(false)
   const [perfilUsuario, setPerfilUsuario] = useState('')
   const [paginaAtual, setPaginaAtual] = useState('dashboard')
+  const [notificacoesAtivas, setNotificacoesAtivas] = useState(true)
+  const [alertaEstoqueAtivo, setAlertaEstoqueAtivo] = useState(true)
   const [receitas, setReceitas] = useState<any[]>([])
   const [medicamentos, setMedicamentos] = useState<any[]>([])
   const [funcionarios, setFuncionarios] = useState([
@@ -725,56 +727,94 @@ function App() {
           <>
             <div className="page-header">
               <h1>Configurações</h1>
-              <p>Gerenciamento de preferências e informações do sistema.</p>
+              <p>Preferências gerais e informações administrativas do sistema.</p>
             </div>
 
-            <section className="dashboard-section">
-              <div className="section-header">
-                <h2>Configurações do sistema</h2>
+            <section className="settings-page">
+              <div className="settings-section">
+                <h2>⚙️ Preferências</h2>
+
+                <div className="settings-row">
+                  <div>
+                    <h3>🔔 Notificações do sistema</h3>
+                    <p>Receber alertas sobre receitas, retiradas e estoque baixo.</p>
+                  </div>
+
+                  <button
+                    className={`toggle-button ${notificacoesAtivas ? 'active' : ''}`}
+                    onClick={() => setNotificacoesAtivas(!notificacoesAtivas)}
+                  >
+                    {notificacoesAtivas ? 'ON' : 'OFF'}
+                  </button>
+                </div>
+
+                <div className="settings-row">
+                  <div>
+                    <h3>📦 Limite de estoque baixo</h3>
+                    <p>Medicamentos com menos de 20 unidades serão sinalizados.</p>
+                  </div>
+
+                  <button
+                    className={`toggle-button ${alertaEstoqueAtivo ? 'active' : ''}`}
+                    onClick={() => setAlertaEstoqueAtivo(!alertaEstoqueAtivo)}
+                  >
+                    {alertaEstoqueAtivo ? 'ON' : 'OFF'}
+                  </button>
+                </div>
               </div>
 
-              <div className="settings-list">
+              <div className="settings-section">
+                <h2>🏥 Sistema</h2>
 
-                <div className="settings-item">
+                <div className="settings-row">
                   <div>
-                    <h3>Dados do sistema</h3>
+                    <h3>🏷️ Nome do sistema</h3>
                     <p>Farmácia Hospitalar</p>
                   </div>
+
+                  <span className="settings-value">v1.0</span>
                 </div>
 
-                <div className="settings-item">
+                <div className="settings-row">
                   <div>
-                    <h3>Limite de estoque baixo</h3>
-                    <p>20 unidades</p>
+                    <h3>🔗 Integrações</h3>
+                    <p>PostgreSQL e RabbitMQ configurados no ambiente.</p>
                   </div>
-                </div>
 
-                <div className="settings-item">
-                  <div>
-                    <h3>Notificações</h3>
-                    <p>Alertas de receitas e estoque ativados</p>
-                  </div>
+                  <span className="settings-badge active">Online</span>
                 </div>
-
-                <div className="settings-item">
-                  <div>
-                    <h3>Segurança</h3>
-                    <p>Acesso controlado por perfil de usuário</p>
-                  </div>
-                </div>
-
               </div>
 
-              <button
-                className="logout-button"
-                onClick={() => {
-                  setUsuarioLogado(false)
-                  setPerfilUsuario('')
-                  setPaginaAtual('dashboard')
-                }}
-              >
-                Sair do sistema
-              </button>
+              <div className="settings-section">
+                <h2>🔒 Segurança</h2>
+
+                <div className="settings-row">
+                  <div>
+                    <h3>👤 Controle de acesso</h3>
+                    <p>Permissões aplicadas conforme o perfil do usuário logado.</p>
+                  </div>
+
+                  <span className="settings-value">Perfil</span>
+                </div>
+
+                <div className="settings-row">
+                  <div>
+                    <h3>🚪 Sessão</h3>
+                    <p>Encerrar o acesso atual e retornar para a tela de login.</p>
+                  </div>
+
+                  <button
+                    className="logout-button"
+                    onClick={() => {
+                      setUsuarioLogado(false)
+                      setPerfilUsuario('')
+                      setPaginaAtual('dashboard')
+                    }}
+                  >
+                    Sair
+                  </button>
+                </div>
+              </div>
             </section>
           </>
         )}
