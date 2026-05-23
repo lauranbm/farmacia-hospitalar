@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: farmacia_postgres
+    environment:
+      POSTGRES_DB: farmacia_db
+      POSTGRES_USER: farmacia_user
+      POSTGRES_PASSWORD: farmacia_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: farmacia_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  postgres_data:

@@ -1,0 +1,15 @@
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\config\CorsConfig.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\config\RabbitMQConfig.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\controller\MedicamentoController.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\controller\ReceitaController.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\FarmaciaHospitalarApplication.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\messaging\BaixaEstoqueConsumer.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\messaging\BaixaEstoqueProducer.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\messaging\ReceitaConsumer.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\messaging\ReceitaProducer.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\model\Medicamento.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\model\Receita.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\repository\MedicamentoRepository.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\repository\ReceitaRepository.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\service\MedicamentoService.java
+C:\Users\Laura\OneDrive\Área de Trabalho\Projeto integrador (Farmacia hospitalar)\farmacia-hospitalar\src\main\java\com\farmaciahospitalar\service\ReceitaService.java
