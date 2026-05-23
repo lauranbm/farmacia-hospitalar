@@ -10,32 +10,7 @@ function App() {
   const [alertaEstoqueAtivo, setAlertaEstoqueAtivo] = useState(true)
   const [receitas, setReceitas] = useState<any[]>([])
   const [medicamentos, setMedicamentos] = useState<any[]>([])
-  const [funcionarios, setFuncionarios] = useState([
-    {
-      id: 1,
-      nome: 'João Pereira',
-      email: 'medico@hospital.com',
-      cargo: 'Médico'
-    },
-    {
-      id: 2,
-      nome: 'Maria Souza',
-      email: 'farmaceutico@hospital.com',
-      cargo: 'Farmacêutico'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Lima',
-      email: 'enfermeiro@hospital.com',
-      cargo: 'Enfermeiro'
-    },
-    {
-      id: 4,
-      nome: 'Administrador',
-      email: 'admin@hospital.com',
-      cargo: 'Administrador'
-    }
-  ])
+  const [funcionarios, setFuncionarios] = useState<any[]>([])
   const [mostrarFormularioMedicamento, setMostrarFormularioMedicamento] = useState(false)
   const [nomeMedicamento, setNomeMedicamento] = useState('')
   const [dosagemMedicamento, setDosagemMedicamento] = useState('')
@@ -71,6 +46,15 @@ function App() {
       })
       .catch((error) => {
         console.error('Erro ao buscar medicamentos:', error)
+      })
+
+    fetch('http://localhost:8080/funcionarios')
+      .then((response) => response.json())
+      .then((data) => {
+        setFuncionarios(data)
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar funcionários:', error)
       })
   }, [])
 
@@ -156,22 +140,34 @@ function App() {
     }
   }
 
-  function criarFuncionario() {
+  async function criarFuncionario() {
     const novoFuncionario = {
-      id: funcionarios.length + 1,
       nome: nomeFuncionario,
       email: emailFuncionario,
+      senha: senhaFuncionario,
       cargo: cargoFuncionario
     }
 
-    setFuncionarios([...funcionarios, novoFuncionario])
+    try {
+      const response = await fetch('http://localhost:8080/funcionarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novoFuncionario)
+      })
 
-    setNomeFuncionario('')
-    setEmailFuncionario('')
-    setSenhaFuncionario('')
-    setCargoFuncionario('')
+      const funcionarioCriado = await response.json()
 
-    setMostrarFormularioFuncionario(false)
+      setFuncionarios([...funcionarios, funcionarioCriado])
+
+      setNomeFuncionario('')
+      setEmailFuncionario('')
+      setSenhaFuncionario('')
+      setCargoFuncionario('')
+
+      setMostrarFormularioFuncionario(false)
+    } catch (error) {
+      console.error('Erro ao criar funcionário:', error)
+    }
   }
 
   if (!usuarioLogado) {
@@ -269,20 +265,33 @@ function App() {
             </div>
 
             <div className="cards">
+
               <div className="card">
-                <span>Receitas criadas</span>
+                <div className="card-top">
+                  <span>Receitas criadas</span>
+                  <div className="card-icon">📄</div>
+                </div>
+
                 <strong>{receitas.length}</strong>
-                <p>Hoje</p>
+                <p>Total cadastrado</p>
               </div>
 
               <div className="card">
-                <span>Medicamentos cadastrados</span>
+                <div className="card-top">
+                  <span>Medicamentos cadastrados</span>
+                  <div className="card-icon">💊</div>
+                </div>
+
                 <strong>{medicamentos.length}</strong>
-                <p>No estoque</p>
+                <p>Itens no estoque</p>
               </div>
 
               <div className="card">
-                <span>Retiradas realizadas</span>
+                <div className="card-top">
+                  <span>Retiradas realizadas</span>
+                  <div className="card-icon">✅</div>
+                </div>
+
                 <strong>
                   {
                     receitas.filter(
@@ -290,11 +299,16 @@ function App() {
                     ).length
                   }
                 </strong>
-                <p>Hoje</p>
+
+                <p>Receitas finalizadas</p>
               </div>
 
               <div className="card">
-                <span>Estoque baixo</span>
+                <div className="card-top">
+                  <span>Estoque baixo</span>
+                  <div className="card-icon">⚠️</div>
+                </div>
+
                 <strong>
                   {
                     medicamentos.filter(
@@ -302,49 +316,90 @@ function App() {
                     ).length
                   }
                 </strong>
+
                 <p>Itens em alerta</p>
               </div>
+
             </div>
+            <section className="dashboard-section">
+              <div className="section-header">
+                <h2>⚠️ Alertas do sistema</h2>
+              </div>
+
+              {
+                medicamentos.filter(
+                  (medicamento) => medicamento.quantidadeEstoque < 20
+                ).length === 0 ? (
+                  <p>Nenhum alerta no momento.</p>
+                ) : (
+                  <div className="alerts-list">
+                    {
+                      medicamentos
+                        .filter(
+                          (medicamento) => medicamento.quantidadeEstoque < 20
+                        )
+                        .map((medicamento) => (
+                          <div className="alert-card" key={medicamento.id}>
+                            <strong>{medicamento.nome}</strong>
+                            <span>
+                              Estoque baixo: {medicamento.quantidadeEstoque} unidades
+                            </span>
+                          </div>
+                        ))
+                    }
+                  </div>
+                )
+              }
+            </section>
 
             <section className="dashboard-section">
               <div className="section-header">
-                <h2>Receitas recentes</h2>
-                <span>Ver todas</span>
+                <h2>🕒 Atividades recentes</h2>
               </div>
 
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Paciente</th>
-                    <th>Médico</th>
-                    <th>Status</th>
-                    <th>Data</th>
-                  </tr>
-                </thead>
+              <div className="activities-columns">
 
-                <tbody>
-                  <tr>
-                    <td>#5</td>
-                    <td>Ana Carolina</td>
-                    <td>Dra. Mariana Souza</td>
-                    <td>
-                      <span className="status criada">CRIADA</span>
-                    </td>
-                    <td>21/05/2026</td>
-                  </tr>
+                <div className="activities-column">
+                  {
+                    receitas.slice(-3).reverse().map((receita) => (
+                      <div className="activity-item" key={receita.id}>
+                        <div className="activity-icon">📄</div>
 
-                  <tr>
-                    <td>#4</td>
-                    <td>Maria Silva</td>
-                    <td>Dr. João Pereira</td>
-                    <td>
-                      <span className="status retirada">RETIRADA</span>
-                    </td>
-                    <td>21/05/2026</td>
-                  </tr>
-                </tbody>
-              </table>
+                        <div>
+                          <strong>
+                            Receita #{receita.id} criada
+                          </strong>
+
+                          <p>
+                            {receita.nomePaciente} • {receita.medicamento}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
+
+                <div className="activities-column">
+                  {
+                    medicamentos.slice(-2).reverse().map((medicamento) => (
+                      <div className="activity-item" key={medicamento.id}>
+                        <div className="activity-icon">💊</div>
+
+                        <div>
+                          <strong>
+                            Medicamento cadastrado
+                          </strong>
+
+                          <p>
+                            {medicamento.nome} • {medicamento.dosagem}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
+
+              </div>
             </section>
           </>
         )}
