@@ -254,7 +254,8 @@ function App() {
 
       <main className="content">
         <div className="user-profile">
-          Perfil logado: <strong>{perfilUsuario}</strong>
+          <span>Perfil logado:</span>
+          <strong>{perfilUsuario}</strong>
         </div>
 
         {paginaAtual === 'dashboard' && (
@@ -323,7 +324,7 @@ function App() {
             </div>
             <section className="dashboard-section">
               <div className="section-header">
-                <h2>⚠️ Alertas do sistema</h2>
+                <h2>Alertas do sistema</h2>
               </div>
 
               {
@@ -354,7 +355,7 @@ function App() {
 
             <section className="dashboard-section">
               <div className="section-header">
-                <h2>🕒 Atividades recentes</h2>
+                <h2>Atividades recentes</h2>
               </div>
 
               <div className="activities-columns">
@@ -787,11 +788,11 @@ function App() {
 
             <section className="settings-page">
               <div className="settings-section">
-                <h2>⚙️ Preferências</h2>
+                <h2>Preferências</h2>
 
                 <div className="settings-row">
                   <div>
-                    <h3>🔔 Notificações do sistema</h3>
+                    <h3>Notificações do sistema</h3>
                     <p>Receber alertas sobre receitas, retiradas e estoque baixo.</p>
                   </div>
 
@@ -805,7 +806,7 @@ function App() {
 
                 <div className="settings-row">
                   <div>
-                    <h3>📦 Limite de estoque baixo</h3>
+                    <h3>Limite de estoque baixo</h3>
                     <p>Medicamentos com menos de 20 unidades serão sinalizados.</p>
                   </div>
 
@@ -819,11 +820,11 @@ function App() {
               </div>
 
               <div className="settings-section">
-                <h2>🏥 Sistema</h2>
+                <h2>Sistema</h2>
 
                 <div className="settings-row">
                   <div>
-                    <h3>🏷️ Nome do sistema</h3>
+                    <h3>Nome do sistema</h3>
                     <p>Farmácia Hospitalar</p>
                   </div>
 
@@ -832,7 +833,7 @@ function App() {
 
                 <div className="settings-row">
                   <div>
-                    <h3>🔗 Integrações</h3>
+                    <h3>Integrações</h3>
                     <p>PostgreSQL e RabbitMQ configurados no ambiente.</p>
                   </div>
 
@@ -841,11 +842,11 @@ function App() {
               </div>
 
               <div className="settings-section">
-                <h2>🔒 Segurança</h2>
+                <h2>Segurança</h2>
 
                 <div className="settings-row">
                   <div>
-                    <h3>👤 Controle de acesso</h3>
+                    <h3>Controle de acesso</h3>
                     <p>Permissões aplicadas conforme o perfil do usuário logado.</p>
                   </div>
 
@@ -854,7 +855,7 @@ function App() {
 
                 <div className="settings-row">
                   <div>
-                    <h3>🚪 Sessão</h3>
+                    <h3>Sessão</h3>
                     <p>Encerrar o acesso atual e retornar para a tela de login.</p>
                   </div>
 

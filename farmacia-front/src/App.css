@@ -15,8 +15,8 @@ body {
 }
 
 .sidebar {
-    width: 260px;
-    background: linear-gradient(180deg, #240046 0%, #5a189a 55%, #9d4edd 100%);
+    width: 230px;
+    background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%);
     color: white;
     padding: 30px 22px;
     box-shadow: 8px 0 25px rgba(43, 10, 92, 0.25);
@@ -37,7 +37,7 @@ body {
 
     background: rgba(255, 255, 255, 0.15);
 
-    border-radius: 16px;
+    border-radius: 8px;
 
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@ body {
 }
 
 .logo-text span {
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 800;
     line-height: 1;
 }
@@ -69,10 +69,10 @@ body {
 
 .sidebar a {
     cursor: pointer;
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 600;
     padding: 14px 16px;
-    border-radius: 14px;
+    border-radius: 8px;
     transition: 0.2s;
 }
 
@@ -89,13 +89,13 @@ body {
 .content {
     flex: 1;
     padding: 38px;
-    background: #f7f5ff;
+    background: #f8fafc;
 }
 
 .content h1 {
-    font-size: 42px;
+    font-size: 32px;
     margin-bottom: 8px;
-    color: #240046;
+    color: #1e3a8a;
 }
 
 .content p {
@@ -115,16 +115,16 @@ body {
 
 .card {
     background: white;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 20px 22px;
-    border-left: 4px solid #7b2ff7;
-    box-shadow: 0 8px 20px rgba(43, 10, 92, 0.08);
+    border-left: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: 0.2s;
 }
 
 .card strong {
-    font-size: 52px;
-    color: #240046;
+    font-size: 40px;
+    color: #1e3a8a;
     margin-top: 2px;
     display: block;
     line-height: 1;
@@ -140,8 +140,8 @@ body {
     margin-top: 34px;
     background: white;
     padding: 24px;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(43, 10, 92, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .section-header {
@@ -152,7 +152,7 @@ body {
 }
 
 .section-header h2 {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 26px;
 }
 
@@ -182,14 +182,14 @@ body {
 
 .status {
     padding: 7px 12px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 13px;
     font-weight: bold;
 }
 
 .status.criada {
-    background: #ede7ff;
-    color: #5a189a;
+    background: #c7d2fe;
+    color: #1d4ed8;
 }
 
 .status.retirada {
@@ -198,11 +198,11 @@ body {
 }
 
 .new-button {
-    background: #7b2ff7;
+    background: #2563eb;
     color: white;
     border: none;
     padding: 12px 18px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -210,13 +210,13 @@ body {
 }
 
 .new-button:hover {
-    opacity: 0.9;
+    opacity: 0.92;
     transform: scale(1.02);
 }
 
 .login-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f7f5ff 0%, #ede7ff 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #c7d2fe 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,8 +227,8 @@ body {
     width: 900px;
     min-height: 520px;
     background: rgba(255, 255, 255, 0.75);
-    border-radius: 28px;
-    box-shadow: 0 20px 50px rgba(43, 10, 92, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
@@ -251,9 +251,9 @@ body {
 .login-logo-icon {
     width: 56px;
     height: 56px;
-    background: #5a189a;
+    background: #1d4ed8;
     color: white;
-    border-radius: 16px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,18 +262,18 @@ body {
 }
 
 .login-logo h1 {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 34px;
     line-height: 1;
 }
 
 .login-logo span {
-    color: #5a189a;
+    color: #1d4ed8;
     font-weight: 600;
 }
 
 .login-form h2 {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 28px;
     margin-bottom: 24px;
 }
@@ -284,7 +284,7 @@ body {
     padding: 14px 16px;
     margin-bottom: 14px;
     border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 15px;
     outline: none;
 }
@@ -296,11 +296,11 @@ body {
 
 .login-form button {
     margin-top: 8px;
-    background: #7b2ff7;
+    background: #2563eb;
     color: white;
     border: none;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -315,12 +315,12 @@ body {
 }
 
 .login-options a {
-    color: #5a189a;
+    color: #1d4ed8;
     cursor: pointer;
 }
 
 .login-illustration {
-    background: linear-gradient(180deg, #240046 0%, #7b2ff7 100%);
+    background: linear-gradient(180deg, #240046 0%, #2563eb 100%);
     color: white;
     padding: 48px;
     display: flex;
@@ -367,13 +367,14 @@ body {
 .user-profile {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
     margin-bottom: 18px;
-    color: #5a189a;
+    color: #1d4ed8;
     font-weight: 600;
 }
 
 .user-profile strong {
-    margin-left: 6px;
     text-transform: capitalize;
 }
 
@@ -386,14 +387,14 @@ body {
 .form-container input {
     padding: 12px 14px;
     border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 15px;
 }
 
 .form-container select {
     padding: 12px 14px;
     border: 1px solid #ddd;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 15px;
     background: white;
 }
@@ -403,7 +404,7 @@ body {
     color: white;
     border: none;
     padding: 12px 22px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
@@ -422,13 +423,13 @@ body {
 
 .settings-section {
     background: white;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 22px 24px;
-    box-shadow: 0 8px 20px rgba(43, 10, 92, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .settings-section h2 {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 22px;
@@ -447,7 +448,7 @@ body {
 }
 
 .settings-row h3 {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
@@ -460,13 +461,13 @@ body {
 }
 
 .settings-value {
-    color: #5a189a;
+    color: #1d4ed8;
     font-weight: 700;
 }
 
 .settings-badge {
     padding: 7px 13px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 13px;
     font-weight: 700;
 }
@@ -502,7 +503,7 @@ body {
 }
 
 .toggle-button.active {
-    background: #7b2ff7;
+    background: #2563eb;
 }
 
 .toggle-button.active::after {
@@ -515,7 +516,7 @@ body {
 
 .settings-section:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(43, 10, 92, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card-top {
@@ -528,14 +529,14 @@ body {
 .card-top span {
     font-size: 17px;
     font-weight: 700;
-    color: #240046;
+    color: #1e3a8a;
 }
 
 .card-icon {
     width: 40px;
     height: 40px;
-    background: #f0e7ff;
-    border-radius: 14px;
+    background: #dbeafe;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -552,7 +553,7 @@ body {
     background: #fff1f2;
     border-left: 5px solid #d90429;
     padding: 16px 18px;
-    border-radius: 14px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -576,9 +577,9 @@ body {
 
 .activities-column {
     background: white;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 18px;
-    box-shadow: 0 4px 14px rgba(43, 10, 92, 0.05);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
 }
 
 .activity-item {
@@ -586,15 +587,15 @@ body {
     align-items: center;
     gap: 14px;
     padding: 14px;
-    border-radius: 14px;
-    background: #f7f5ff;
+    border-radius: 8px;
+    background: #f8fafc;
 }
 
 .activity-icon {
     width: 42px;
     height: 42px;
-    background: #f0e7ff;
-    border-radius: 12px;
+    background: #dbeafe;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -602,7 +603,7 @@ body {
 }
 
 .activity-item strong {
-    color: #240046;
+    color: #1e3a8a;
     font-size: 15px;
 }
 
@@ -673,7 +674,7 @@ body {
 
     .sidebar nav::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     .sidebar nav::-webkit-scrollbar-thumb:hover {
@@ -729,7 +730,7 @@ body {
 
 .dashboard-section::-webkit-scrollbar-thumb {
     background: rgba(120, 0, 255, 0.25);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .dashboard-section::-webkit-scrollbar-thumb:hover {
