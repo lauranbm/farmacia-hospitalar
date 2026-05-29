@@ -267,7 +267,7 @@ function App() {
 
             <div className="cards">
 
-              <div className="card">
+              <div className="card card-receitas">
                 <div className="card-top">
                   <span>Receitas criadas</span>
                   <div className="card-icon">📄</div>
@@ -277,7 +277,7 @@ function App() {
                 <p>Total cadastrado</p>
               </div>
 
-              <div className="card">
+              <div className="card card-medicamentos">
                 <div className="card-top">
                   <span>Medicamentos cadastrados</span>
                   <div className="card-icon">💊</div>
@@ -287,7 +287,7 @@ function App() {
                 <p>Itens no estoque</p>
               </div>
 
-              <div className="card">
+              <div className="card card-retiradas">
                 <div className="card-top">
                   <span>Retiradas realizadas</span>
                   <div className="card-icon">✅</div>
@@ -304,7 +304,7 @@ function App() {
                 <p>Receitas finalizadas</p>
               </div>
 
-              <div className="card">
+              <div className="card card-estoque">
                 <div className="card-top">
                   <span>Estoque baixo</span>
                   <div className="card-icon">⚠️</div>
@@ -324,7 +324,7 @@ function App() {
             </div>
             <section className="dashboard-section">
               <div className="section-header">
-                <h2>Alertas do sistema</h2>
+                <h2>⚠️ Alertas do sistema</h2>
               </div>
 
               {
@@ -355,7 +355,7 @@ function App() {
 
             <section className="dashboard-section">
               <div className="section-header">
-                <h2>Atividades recentes</h2>
+                <h2>📋 Atividades recentes</h2>
               </div>
 
               <div className="activities-columns">

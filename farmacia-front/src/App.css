@@ -114,25 +114,41 @@ body {
 }
 
 .card {
-    background: white;
-    border-radius: 10px;
+    border-radius: 18px;
     padding: 20px 22px;
-    border-left: 1px solid #e5e7eb;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 20px rgba(43, 10, 92, 0.12);
     transition: 0.2s;
+    color: white;
+}
+
+.card-receitas {
+    background: linear-gradient(135deg, #7b2ff7, #5a189a);
+}
+
+.card-medicamentos {
+    background: linear-gradient(135deg, #9d4edd, #7b2ff7);
+}
+
+.card-retiradas {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+}
+
+.card-estoque {
+    background: linear-gradient(135deg, #a4133c, #800f2f);
 }
 
 .card strong {
     font-size: 40px;
-    color: #1e3a8a;
+    color: white;
     margin-top: 2px;
     display: block;
     line-height: 1;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .card p {
     margin-top: 8px;
-    color: #777;
+    color: rgba(255, 255, 255, 0.85);
     font-size: 14px;
 }
 
@@ -529,14 +545,15 @@ body {
 .card-top span {
     font-size: 17px;
     font-weight: 700;
-    color: #1e3a8a;
+    color: white;
 }
 
 .card-icon {
     width: 40px;
     height: 40px;
-    background: #dbeafe;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -550,13 +567,21 @@ body {
 }
 
 .alert-card {
-    background: #fff1f2;
+    background: white;
+    border: 1px solid #f3d4d8;
     border-left: 5px solid #d90429;
-    padding: 16px 18px;
-    border-radius: 8px;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: 0.2s;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+}
+
+.alert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .alert-card strong {
