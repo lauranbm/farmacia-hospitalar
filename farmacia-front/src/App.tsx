@@ -250,6 +250,17 @@ function App() {
             </>
           )}
         </nav>
+        <button
+          className="sidebar-logout"
+          onClick={() => {
+            setUsuarioLogado(false)
+            setPerfilUsuario('')
+            setPaginaAtual('dashboard')
+          }}
+        >
+          <span className="logout-icon">↩</span>
+          <span>Sair</span>
+        </button>
       </aside>
 
       <main className="content">
