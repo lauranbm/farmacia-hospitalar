@@ -241,6 +241,11 @@ body {
     color: #1f8f55;
 }
 
+.status.vencida {
+    background: #fcd6d6;
+    color: #8b8585;
+}
+
 .new-button {
     background: #2563eb;
     color: white;

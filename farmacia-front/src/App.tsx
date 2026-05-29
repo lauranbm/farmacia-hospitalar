@@ -540,13 +540,7 @@ function App() {
                         <td>{receita.dosagem}</td>
                         <td>{receita.quantidade}</td>
                         <td>
-                          <span
-                            className={
-                              receita.status === 'RETIRADA'
-                                ? 'status retirada'
-                                : 'status criada'
-                            }
-                          >
+                          <span className={`status ${receita.status.toLowerCase().trim()}`}>
                             {receita.status}
                           </span>
                         </td>
@@ -683,7 +677,7 @@ function App() {
                         <td>{receita.dosagem}</td>
                         <td>{receita.quantidade}</td>
                         <td>
-                          <span className="status criada">
+                          <span className={`status ${receita.status.toLowerCase().trim()}`}>
                             {receita.status}
                           </span>
                         </td>

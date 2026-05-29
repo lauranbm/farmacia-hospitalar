@@ -34,7 +34,17 @@ public class ReceitaService {
     }
 
     public List<Receita> listar() {
-        return receitaRepository.findAll();
+        List<Receita> receitas = receitaRepository.findAll();
+
+        for (Receita receita : receitas) {
+            if ("CRIADA".equals(receita.getStatus()) &&
+                    receita.getDataCriacao() != null &&
+                    receita.getDataCriacao().isBefore(LocalDateTime.now().minusDays(5))) {
+                receita.setStatus("VENCIDA");
+            }
+        }
+
+        return receitas;
     }
 
     public Receita confirmarRetirada(Long idReceita) {
