@@ -28,6 +28,7 @@ function App() {
   const [dosagem, setDosagem] = useState('')
   const [quantidade, setQuantidade] = useState('')
   const [observacoes, setObservacoes] = useState('')
+  const [buscaRetirada, setBuscaRetirada] = useState('')
 
   useEffect(() => {
     fetch('http://localhost:8080/receitas')
@@ -651,6 +652,14 @@ function App() {
             <section className="dashboard-section">
               <div className="section-header">
                 <h2>Receitas disponíveis para retirada</h2>
+
+                <input
+                  className="search-input"
+                  type="text"
+                  placeholder="Buscar por paciente..."
+                  value={buscaRetirada}
+                  onChange={(e) => setBuscaRetirada(e.target.value)}
+                />
               </div>
 
               <table className="table">
@@ -669,6 +678,16 @@ function App() {
                 <tbody>
                   {receitas
                     .filter((receita) => receita.status !== 'RETIRADA')
+                    .filter((receita) =>
+                      receita.nomePaciente
+                        .toLowerCase()
+                        .includes(buscaRetirada.toLowerCase())
+                    )
+                    .sort((a, b) => {
+                      if (a.status === 'CRIADA' && b.status === 'VENCIDA') return -1
+                      if (a.status === 'VENCIDA' && b.status === 'CRIADA') return 1
+                      return 0
+                    })
                     .map((receita) => (
                       <tr key={receita.id}>
                         <td>#{receita.id}</td>
@@ -684,9 +703,12 @@ function App() {
                         <td>
                           <button
                             className="new-button"
+                            disabled={receita.status === 'VENCIDA'}
                             onClick={() => confirmarRetirada(receita.id)}
                           >
-                            Confirmar retirada
+                            {receita.status === 'VENCIDA'
+                              ? 'Receita vencida'
+                              : 'Confirmar retirada'}
                           </button>
                         </td>
                       </tr>

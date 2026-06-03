@@ -256,6 +256,14 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
+    width: 180px;
+}
+
+.new-button:disabled {
+    background: #a4a6aa;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.8;
 }
 
 .new-button:hover {
@@ -793,4 +801,18 @@ body {
 
 .dashboard-section::-webkit-scrollbar-thumb:hover {
     background: rgba(120, 0, 255, 0.45);
+}
+
+.search-input {
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    min-width: 260px;
+}
+
+.search-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
